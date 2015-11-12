@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 	def index
 		@posts = Post.all
-		render :index #render index?
+		render :posts #render index?
 	end
 
 	def new
@@ -14,4 +14,9 @@ class PostsController < ApplicationController
 		@post = Post.create(post_params)
 		redirect_to "/posts"
 	end
+
+	  def show
+    @post = Post.find(params[:id])
+    render :show
+  end
 end
