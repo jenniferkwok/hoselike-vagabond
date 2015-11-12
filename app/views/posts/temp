@@ -1,0 +1,1 @@
+<%= f.collection_select :city, City.all, City.order(:name),:id,:name,:country, include_blank: false %>
