@@ -1,0 +1,19 @@
+<div>
+<img src="http://i.ytimg.com/vi/0CPMcX-yWec/default.jpg">
+</div>
+Sign Up
+<%= form_for @user do |f| %>
+	<div>
+		<%= f.text_field :name, placeholder: "Name" %>
+	</div>
+	<div>
+		<%= f.text_field :email, placeholder: "Email" %>
+	</div>
+	<div>
+		<%= f.password_field :password, placeholder: "Password" %>
+	</div>
+	<div>
+		<%= f.text_field :location, placeholder: "Location" %>
+	</div>
+	<%= f.submit "Sign Up!!!!" %>
+<% end %>
