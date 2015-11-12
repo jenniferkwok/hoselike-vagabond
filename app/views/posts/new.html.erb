@@ -7,7 +7,6 @@
     <%= f.text_field :content, placeholder: "Your post here" %>
   </div>
   <div>
-<%= f.collection_select :city, City.order(:name),:id,:name,:country, include_blank: false %>
   </div>
   <%= f.submit "Submit" %>
 <% end %> 

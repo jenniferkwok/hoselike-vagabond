@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
   get "/posts", to: "posts#index", as: "posts"
   get "/posts/new", to: "posts#new", as: "new_post"
+  post "/posts", to: "posts#create"
 
   get "/cities", to: "cities#index", as: "cities"
 
