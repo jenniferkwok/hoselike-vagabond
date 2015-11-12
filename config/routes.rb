@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root to: "welcome#index"
+  get "/posts", to: "posts#index", as: "posts"
+  get "/posts/new", to: "posts#new", as: "new_post"
+
+  get "/cities", to: "cities#index", as: "cities"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

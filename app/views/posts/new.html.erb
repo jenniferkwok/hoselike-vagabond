@@ -1,0 +1,13 @@
+<h1>New Post</h1>
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Post Title" %>
+  </div>
+  <div>
+    <%= f.text_field :content, placeholder: "Your post here" %>
+  </div>
+  <div>
+<%= f.collection_select :city, City.order(:name),:id,:name,:country, include_blank: false %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %> 
