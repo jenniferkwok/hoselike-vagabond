@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create" #POST create a new session
 
+  resources :users
 
   get "/posts", to: "posts#index", as: "posts"
 
@@ -29,7 +30,6 @@ Rails.application.routes.draw do
 
   get "/cities", to: "cities#index", as: "cities"
 
-  resources :users
 
   
 
