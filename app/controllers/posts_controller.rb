@@ -38,8 +38,9 @@ class PostsController < ApplicationController
   	def destroy
   		id = params[:id]
   		post = Post.find(id)
-  		city = post.city_id
+  		city = City.find(post.city_id)
   		post.destroy
-  		redirect_to "/cities/#{city}"
+		pretty = city.slug  	
+  		redirect_to "/cities/#{pretty}"
   	end
 end
