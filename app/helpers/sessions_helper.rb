@@ -10,8 +10,11 @@ module SessionsHelper
 
 	def logged_in?
 		if current_user == nil
-			redirect_to "/sign_in"
+			return false
+		else
+			return true
 		end
+
 	end
 
 	def logout
