@@ -1,12 +1,13 @@
+<%= render partial: "/users/header" %>
 <h1>New Post</h1>
 <%= form_for @post do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Post Title" %>
+  </div><br>
+  <div>
+    <%= f.text_area :content, placeholder: "Your post here" %>
   </div>
   <div>
-    <%= f.text_field :content, placeholder: "Your post here" %>
   </div>
-  <div>
-  </div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", :class => "btn btn-material-indigo" %>
 <% end %> 

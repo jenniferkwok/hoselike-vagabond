@@ -1,18 +1,18 @@
 <%= render partial: "header" %>
-Edit
+<h1>Edit</h1>
 
 <%= form_for @user do |f| %>
-	<div>
+	<br><div>
 		<%= f.text_field :name, placeholder: "Name" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.text_field :email, placeholder: "Email" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.password_field :password, placeholder: "Password" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.text_field :location, placeholder: "Location" %>
-	</div>
-	<%= f.submit "Edit!!!!" %>
+	</div><br>
+	<%= f.submit "Edit!!!!", :class => "btn btn-material-indigo" %>
 <% end %>
