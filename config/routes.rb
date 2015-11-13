@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   get "/posts/:id", to: "posts#show"
 
+  get "/posts/:id/edit", to: "posts#edit"
+
   get "/cities", to: "cities#index", as: "cities"
 
   get "/cities/:id", to: "cities#show"
