@@ -4,11 +4,6 @@ class UsersController < ApplicationController
 	# we need to make a new user to pass to the form later
 	def new
 		@user = User.new
-		if logged_in?
-			@logged_in=true
-		else
-			@logged_in=false
-		end
 	end
 
 	def create
