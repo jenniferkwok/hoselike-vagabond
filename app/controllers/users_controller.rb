@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         id = params[:id]
         user = User.find(id)
 
-        updated_attributes = params.require(:user).permit(:name, :description)
+        updated_attributes = params.require(:user).permit(:name, :email, :password, :location)
         user.update_attributes(updated_attributes)
         redirect_to user
     end
