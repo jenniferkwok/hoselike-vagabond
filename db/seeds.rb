@@ -5,6 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Post.destroy_all
+City.destroy_all
+
+User.create({name: "Jamey", email: "jamey@hollis.com", password: "jamey", location: "Tatooine"})
+User.create({name: "Jen", email: "jen@kwok.com", password: "jen", location: "Dagoba"})
+User.create({name: "Francesca", email: "francesca@long.com", password: "francesca", location: "Alderaan"})
+User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant"})
+
 
 
 Post.create({userid: "1", cityid: "1", title: "test post 1", content: "testing!! I love this city!!!!"})
