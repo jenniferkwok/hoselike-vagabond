@@ -9,18 +9,29 @@ User.destroy_all
 Post.destroy_all
 City.destroy_all
 
-User.create({name: "Jamey", email: "jamey@hollis.com", password: "jamey", location: "Tatooine"})
-User.create({name: "Jen", email: "jen@kwok.com", password: "jen", location: "Dagoba"})
-User.create({name: "Francesca", email: "francesca@long.com", password: "francesca", location: "Alderaan"})
-User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant"})
+u1=User.create({name: "Jamey", email: "jamey@hollis.com", password: "jamey", location: "Tatooine"})
+u2=User.create({name: "Jen", email: "jen@kwok.com", password: "jen", location: "Dagoba"})
+u3=User.create({name: "Francesca", email: "francesca@long.com", password: "francesca", location: "Alderaan"})
+u4=User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant"})
 
 
+sf=City.create({name: "San Francisco", country: "USA", image: "http://ww2.kqed.org/pop/wp-content/uploads/sites/12/2014/05/6602702443_3b3c0d8316_b.jpg"})
+lon=City.create({name: "London", country: "UK", image: "http://cdn.londonandpartners.com/assets/events/special/46355-640x360-changing_guard_gates_640.jpg"})
+gib=City.create({name: "Gibraltar", country: "British overseas territory", image: "http://www.msccruises.co.za/za_en/Images/Gibraltar_tcm27-3906.jpg"})
 
-Post.create({userid: "1", cityid: "1", title: "test post 1", content: "testing!! I love this city!!!!"})
-Post.create({userid: "2", cityid: "2", title: "test post 2", content: "testing!! I love this city!!!!"})
-Post.create({userid: "3", cityid: "3", title: "test post 3", content: "testing!! I love this city!!!!"})
-Post.create({userid: "4", cityid: "3", title: "test post 4", content: "testing!! I love this city!!!"})
+p1=Post.create({title: "test post 1", content: "testing!! I love this San Francisco!!!!"})
+p2=Post.create({title: "test post 2", content: "testing!! I love this London!!!!"})
+p3=Post.create({title: "test post 3", content: "testing!! I love this Gibraltar!!!!"})
+p4=Post.create({title: "test post 4", content: "testing!! I love Gibraltar!!!"})
 
-City.create({name: "San Francisco", country: "USA", image: "http://ww2.kqed.org/pop/wp-content/uploads/sites/12/2014/05/6602702443_3b3c0d8316_b.jpg"})
-City.create({name: "London", country: "UK", image: "http://cdn.londonandpartners.com/assets/events/special/46355-640x360-changing_guard_gates_640.jpg"})
-City.create({name: "Gibraltar", country: "British overseas territory", image: "http://www.msccruises.co.za/za_en/Images/Gibraltar_tcm27-3906.jpg"})
+p1.city = sf
+p1.user = u1
+
+p2.city = lon
+p2.user = u2
+
+p3.city = gib
+p3.user = u3
+
+p4.city = gib
+p4.user = u4

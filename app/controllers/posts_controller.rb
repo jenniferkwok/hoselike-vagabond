@@ -16,8 +16,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@city = City.find(params[:id])
 	    @post = Post.find(params[:id])
+		@city = City.where(:postid => params[:cityid])
 	    render :show
   	end
 
