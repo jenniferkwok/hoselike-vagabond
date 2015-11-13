@@ -8,4 +8,22 @@
 </div>
 
 <a href="/posts/<%=@post.id%>/edit"><button type="button" class="btn btn-default">Edit</button></a>
-<%= button_to "Delete", @post, method: :delete %>
+<button class="btn btn-primary" data-toggle="modal" data-target="#complete-dialog">Delete</button>
+
+<div id="complete-dialog" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Confirm</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are sure you want to delete <%= @title %>, <%= @user %></p>
+      </div>
+      <div class="modal-footer">
+      <%= button_to "Delete", @post, method: :delete %>
+        <button class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+      </div>
+    </div>
+  </div>
+</div>
