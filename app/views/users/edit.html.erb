@@ -2,17 +2,17 @@
 Edit
 
 <%= form_for @user do |f| %>
-	<div>
+	<br><div>
 		<%= f.text_field :name, placeholder: "Name" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.text_field :email, placeholder: "Email" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.password_field :password, placeholder: "Password" %>
-	</div>
+	</div><br>
 	<div>
 		<%= f.text_field :location, placeholder: "Location" %>
-	</div>
+	</div><br>
 	<%= f.submit "Edit!!!!" %>
 <% end %>
