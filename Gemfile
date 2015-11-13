@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # include material-design
 gem 'bootstrap-material-design'
 
+# pretty urls
+gem 'friendly_id'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
