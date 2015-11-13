@@ -24,14 +24,15 @@ p2=Post.create({title: "test post 2", content: "testing!! I love this London!!!!
 p3=Post.create({title: "test post 3", content: "testing!! I love this Gibraltar!!!!"})
 p4=Post.create({title: "test post 4", content: "testing!! I love Gibraltar!!!"})
 
-p1.city = sf
-p1.user = u1
+sf.posts << p1
+u1.posts << p1
 
-p2.city = lon
-p2.user = u2
+lon.posts << p2
+u2.posts << p2
 
-p3.city = gib
-p3.user = u3
+gib.posts << p3
+u3.posts << p3
 
-p4.city = gib
-p4.user = u4
+gib.posts << p4
+u4.posts << p4
+
