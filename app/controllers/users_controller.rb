@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 		else
 			@logged_in=false
 		end
+		@posts = Post.where(:userid => params[:id])
 		render :show
 	end
 
