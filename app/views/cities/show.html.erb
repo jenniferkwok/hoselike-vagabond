@@ -1,2 +1,10 @@
 <%= render partial: "/users/header" %>
-<h1>this is cities show!!</h1>
+<%= render partial: "/users/navbar" %>
+
+<img src =" <%= @city.image %> ">
+<h1>Posts about <%= @city.name %></h1>
+<h1>Your Posts here!!!!!</h1>
+<% @posts.reverse.each do |post| %>
+<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a> <br></h4>
+<p><%= post.content %></p>
+<% end %>
