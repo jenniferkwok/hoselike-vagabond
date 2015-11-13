@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
 	# grab the users
-	def index
-		@users = User.all
-	end
 
 	# we need to make a new user to pass to the form later
 	def new
 		@user = User.new
-		render :new
+		if logged_in?
+			@logged_in=true
+		else
+			@logged_in=false
+		end
 	end
 
 	def create
@@ -19,10 +20,20 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		if logged_in?
+			@logged_in=true
+		else
+			@logged_in=false
+		end
 		render :show
 	end
 
 	def edit
+		if logged_in?
+			@logged_in=true
+		else
+			@logged_in=false
+		end
         id = params[:id]
         @user = User.find(id)
     end
