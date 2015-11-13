@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113194957) do
+ActiveRecord::Schema.define(version: 20151113214346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20151113194957) do
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "userid"
-    t.string   "cityid"
     t.string   "title"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "city_id"
   end
 
   create_table "users", force: :cascade do |t|
