@@ -1,5 +1,5 @@
 <%= render partial: "/users/header" %>
-Sign In
+<h1>Sign In</h1>
 <!-- form is getting submitted to POST /sessions -->
 <%= form_for @user, url: "/sessions", method: "post" do |f| %> 
   <br><div>
@@ -8,5 +8,5 @@ Sign In
   <div>
     <%= f.password_field :password, placeholder: "Password" %>
   </div><br>
-  <%= f.submit "Sign In" %>
+  <%= f.submit "Sign In", :class => "btn btn-material-indigo"  %>
 <% end %>

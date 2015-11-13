@@ -1,5 +1,5 @@
 <%= render partial: "header" %>
-Edit
+<h1>Edit</h1>
 
 <%= form_for @user do |f| %>
 	<br><div>
@@ -14,5 +14,5 @@ Edit
 	<div>
 		<%= f.text_field :location, placeholder: "Location" %>
 	</div><br>
-	<%= f.submit "Edit!!!!" %>
+	<%= f.submit "Edit!!!!", :class => "btn btn-material-indigo" %>
 <% end %>
