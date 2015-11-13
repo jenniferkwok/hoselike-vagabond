@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 		else
 			@logged_in=false
 		end
-		@posts = Post.where(:userid => params[:id])
+		@posts = Post.where(:user_id => params[:id])
 		render :show
 	end
 

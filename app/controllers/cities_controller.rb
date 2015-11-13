@@ -12,7 +12,7 @@ class CitiesController < ApplicationController
 			@logged_in=false
 	end
 	p params[:id]
-	@posts = Post.where(:cityid => @city.id)
+	@posts = Post.where(:city_id => @city.id)
     render :show
   end
 end
