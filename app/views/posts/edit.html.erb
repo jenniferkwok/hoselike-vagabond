@@ -1,0 +1,14 @@
+<%= render partial: "/users/header" %>
+<h1>Edit Post</h1>
+
+<%= form_for @post do |f| %>
+	<br><div>
+		<%= f.text_field :title, placeholder: "Title" %>
+	</div><br>
+	<div>
+		<%= f.text_area :content, placeholder: "Content" %>
+	</div><br>
+	
+	</div><br>
+	<%= f.submit "Edit!!!!", :class => "btn btn-material-indigo" %>
+<% end %>
