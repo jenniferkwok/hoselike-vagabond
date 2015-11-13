@@ -34,4 +34,12 @@ class PostsController < ApplicationController
         post.update_attributes(updated_attributes)
         redirect_to post
   	end
+
+  	def destroy
+  		id = params[:id]
+  		post = Post.find(id)
+  		city = post.city_id
+  		post.destroy
+  		redirect_to "/cities/#{city}"
+  	end
 end

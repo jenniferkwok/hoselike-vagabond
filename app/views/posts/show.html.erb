@@ -7,4 +7,5 @@
   Content <%= @post.content %>
 </div>
 
-
+<a href="/posts/<%=@post.id%>/edit"><button type="button" class="btn btn-default">Edit</button></a>
+<%= button_to "Delete", @post, method: :delete %>
