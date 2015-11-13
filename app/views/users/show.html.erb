@@ -1,3 +1,11 @@
+<%= rander partial: "header" %>
+<%= rander partial: "navbar" %>
+
 <div>
   Welcome, <%= @user.name %> 
 </div>
+<h1>Your Posts here!!!!!</h1>
+<% @posts:id.each do |post| %>
+<h4>Title: <%= post.title %> <br></h4>
+<p>Content: <%= post.content %></p>
+<% end %>
