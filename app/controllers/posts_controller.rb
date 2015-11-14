@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   		post = Post.find(id)
   		city = City.find(post.city_id)
   		post.destroy
-		pretty = city.slug  	
+		  pretty = city.slug  	
   		redirect_to "/cities/#{pretty}"
   	end
 end
