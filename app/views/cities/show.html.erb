@@ -12,10 +12,10 @@
       <div class="modal-body">
 <%= form_for @post do |f| %>
   <div>
-    <%= f.text_field :title, placeholder: "Post Title" %>
+    <%= f.text_field :title, placeholder: "Post Title", class: "form-control floating-label" %>
   </div><br>
   <div>
-    <%= f.text_area :content, placeholder: "Your post here" %>
+    <%= f.text_area :content, placeholder: "Your post here", class: "form-control floating-label" %>
   </div>
   <div>
   	<input type = "hidden" name = "city_id" value = "<%=@city.id%>">
@@ -23,14 +23,10 @@
   <%= f.submit "Submit", :class => "btn btn-material-success" %>
 <% end %> 
       </div>
-      <div class="modal-footer">
-      
-        <button class="btn btn-primary" data-dismiss="modal">Dismiss</button>
-      </div>
     </div>
   </div>
 </div>
-
+<br>
 <img src =" <%= @city.image %> ">
 <h1>Posts about <%= @city.name %></h1>
 <h1>Your Posts here!!!!!</h1>
