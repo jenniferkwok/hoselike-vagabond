@@ -17,4 +17,6 @@
  *
  */
  
-
+body, .well {
+	text-align: center;
+}

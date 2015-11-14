@@ -1,7 +1,8 @@
 <%= render partial: "/users/header" %>
 <%= render partial: "/users/navbar" %>
 
-<button class="btn btn-primary" data-toggle="modal" data-target="#complete-dialog">Create New Post</button>
+<h1><%= @city.name %></h1>
+<button class="btn btn-raised btn-material-amber" data-toggle="modal" data-target="#complete-dialog">Create New Post</button>
 <div id="complete-dialog" class="modal fade" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -20,7 +21,7 @@
   <div>
   	<input type = "hidden" name = "city_id" value = "<%=@city.id%>">
   </div>
-  <%= f.submit "Submit", :class => "btn btn-material-success" %>
+  <%= f.submit "Submit", class: "btn btn-raised btn-material-amber" %>
 <% end %> 
       </div>
     </div>
@@ -28,9 +29,9 @@
 </div>
 <br>
 <img src =" <%= @city.image %> ">
-<h1>Posts about <%= @city.name %></h1>
 <h1>Your Posts here!!!!!</h1>
 <% @posts.reverse.each do |post| %>
+<div class="well infobox col-xs-8">
 <h4><a href = "/posts/<%= post.id %>"><%= post.title %></a> <br></h4>
-<p><%= post.content %></p>
+<p><%= post.content %></p></div>
 <% end %>
