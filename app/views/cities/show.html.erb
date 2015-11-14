@@ -1,8 +1,25 @@
 <%= render partial: "/users/header" %>
 <%= render partial: "/users/navbar" %>
 
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card citycard">
+            <div class="card-image">
+              <span class="card-content"><h1><%= @city.name %></h1></span>
+              <img src="<%= @city.image %>">
+            </div>
+            <div class="card-action">
+            <br>
+            <button class="btn btn-raised btn-material-amber" data-toggle="modal" data-target="#complete-dialog">Create New Post</button>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+<!-- 
 <h1><%= @city.name %></h1>
-<button class="btn btn-raised btn-material-amber" data-toggle="modal" data-target="#complete-dialog">Create New Post</button>
+<button class="btn btn-raised btn-material-amber" data-toggle="modal" data-target="#complete-dialog">Create New Post</button> -->
 <div id="complete-dialog" class="modal fade" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -27,11 +44,11 @@
     </div>
   </div>
 </div>
-<br>
+<br><!-- 
 <img src =" <%= @city.image %> ">
-<h1>Your Posts here!!!!!</h1>
+<h1>Your Posts here!!!!!</h1> -->
 <% @posts.reverse.each do |post| %>
-<div class="well infobox col-xs-8">
-<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a> <br></h4>
+<div class="card postcard shadow-z-1">
+<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> <hr>
 <p><%= post.content %></p></div>
 <% end %>

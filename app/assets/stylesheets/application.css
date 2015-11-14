@@ -20,3 +20,10 @@
 body, .well {
 	text-align: center;
 }
+.card {
+	width: 60%;
+	margin: 20px;
+}
+.card-content {
+	color:white;
+}
