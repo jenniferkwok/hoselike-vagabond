@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
 		@cities = City.all
 		render "/users/index"
 	end
-	 
+
 	def show
    	 @city = City.friendly.find(params[:id])
    	 if logged_in?
@@ -13,6 +13,9 @@ class CitiesController < ApplicationController
 	end
 	p params[:id]
 	@posts = Post.where(:city_id => @city.id)
-    render :show
+		@post = Post.new
+	render :show	
+	
+
   end
 end

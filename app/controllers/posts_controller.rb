@@ -10,9 +10,12 @@ class PostsController < ApplicationController
 	end
 
 	def create
+    @city = City.find(params[:city_id])
 		post_params = params.require(:post).permit(:cityid, :title, :content)
 		@post = Post.create(post_params)
-		redirect_to "/posts"
+    @city.posts << @post
+    current_user.posts << @post
+		redirect_to "/cities/#{@city.slug}"
 	end
 
 	def show
