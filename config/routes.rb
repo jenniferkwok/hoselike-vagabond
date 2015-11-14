@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create" #POST create a new session
 
+  delete "/logout", to: "sessions#destroy"
+
   #resources :users
 
   get "/posts", to: "posts#index", as: "posts"
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
 
   get "/cities/:id", to: "cities#show"
 
-  resources :users, :posts, :cities
+  resources :users, :posts, :cities, :sessions
 
   
 

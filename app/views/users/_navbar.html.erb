@@ -20,7 +20,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="javascript:void(0)">Link</a></li>
       	<% if @logged_in %>
-			<li><a href="/sign_out">Log Out</a></li>
+			<li><%= link_to "Log out", logout_path, method: :delete %></li>
 		<% else %>
 			<li><a href="/sign_in">Log in</a></li>
 		<% end %>
