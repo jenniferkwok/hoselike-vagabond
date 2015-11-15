@@ -15,6 +15,8 @@ class PostsController < ApplicationController
 		@post = Post.create(post_params)
     @city.posts << @post
     current_user.posts << @post
+    current_user.points +=1
+    current_user.save
 		redirect_to "/cities/#{@city.slug}"
 	end
 
