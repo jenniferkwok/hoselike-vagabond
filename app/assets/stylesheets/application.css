@@ -24,6 +24,10 @@ body, .well {
 	width: 60%;
 	margin: 20px;
 }
+
+#map {
+	margin: auto;
+}
 .card-content {
 	color:white;
 }
