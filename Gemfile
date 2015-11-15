@@ -33,7 +33,7 @@ gem 'friendly_id'
 
 # map
 gem 'gmaps4rails'
-gem 'underscore'
+gem 'underscore-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
