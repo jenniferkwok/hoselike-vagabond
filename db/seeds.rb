@@ -9,10 +9,10 @@ User.destroy_all
 Post.destroy_all
 City.destroy_all
 
-u1=User.create({name: "Jamey", email: "jamey@hollis.com", password: "jamey", location: "Tatooine"})
-u2=User.create({name: "Jen", email: "jen@kwok.com", password: "jen", location: "Dagoba"})
-u3=User.create({name: "Francesca", email: "francesca@long.com", password: "francesca", location: "Alderaan"})
-u4=User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant"})
+u1=User.create({name: "Jamey", email: "jamey@hollis.com", password: "jamey", location: "Tatooine", points: 5})
+u2=User.create({name: "Jen", email: "jen@kwok.com", password: "jen", location: "Dagoba", points: 7})
+u3=User.create({name: "Francesca", email: "francesca@long.com", password: "francesca", location: "Alderaan", points: 9})
+u4=User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant", points: 2})
 
 
 sf=City.create({name: "San Francisco", country: "USA", image: "http://ww2.kqed.org/pop/wp-content/uploads/sites/12/2014/05/6602702443_3b3c0d8316_b.jpg"})
