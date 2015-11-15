@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover ">
+<!-- how to pass data into the page -->
+<!-- @top_users array  -->
+    <thead>
+        <tr>
+            <th class = "tableHeader">Position</th>
+            <th class = "tableHeader">Name</th>
+            <th class = "tableHeader">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% i = 1 %>
+    <% @top_users.each do |user| %>
+        <tr>
+            <td><%=i%></td>
+            <td><%= user.name%></td>
+            <td><%= user.points%></td>
+            <% i+=1 %>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
