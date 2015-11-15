@@ -11,3 +11,60 @@
 <h4>Title: <%= post.title %> <br></h4>
 <p>Content: <%= post.content %></p>
 <% end %>
+
+<div style='width: 1000px;'>
+  <div id="map" style='width: 500px; height: 250px;'></div>
+</div>
+<script type="text/javascript">
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 2,
+      center: new google.maps.LatLng(33,-50),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+     styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"on"},{"color":"#297831"}]},{"featureType":"administrative.country","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative.locality","elementType":"labels.text.stroke","stylers":[{"color":"#35833d"},{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.fill","stylers":[{"visibility":"off"},{"color":"#f49f9f"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#1f8429"},{"visibility":"on"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#329d3d"}]},{"featureType":"landscape.natural.landcover","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural.terrain","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#329d3d"},{"visibility":"on"}]},{"featureType":"poi.attraction","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#57a85f"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.government","elementType":"all","stylers":[{"color":"#106319"},{"visibility":"on"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"},{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#4aab54"}]},{"featureType":"poi.school","elementType":"geometry.fill","stylers":[{"color":"#71c279"}]},{"featureType":"poi.sports_complex","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#49cf57"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#329d3d"},{"visibility":"on"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#89d791"},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#5eb267"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#73bd7a"}]},{"featureType":"transit.line","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#28702f"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#12c2f3"}]}]}
+
+
+    );
+
+    var london = new google.maps.LatLng(51.51, -0.127);
+
+    var londonmarker = new google.maps.Marker({
+        position: london,
+        url: '/cities/london',
+        title: 'This link opens the London home page',
+        map: map
+    });
+
+    var gib = new google.maps.LatLng(36.14, -5.35);
+
+    var gibmarker = new google.maps.Marker({
+        position: gib,
+        url: '/cities/gibraltar',
+        title: 'This link opens the Gibraltar home page',
+        map: map
+    });
+
+	var sf = new google.maps.LatLng(37.77, -122.42);
+
+    var sfmarker = new google.maps.Marker({
+        position: sf,
+        url: '/cities/san-francisco',
+        title: 'This link opens the San Francisco home page',
+        map: map
+    });
+
+
+    google.maps.event.addListener(londonmarker, 'click', function() {
+      window.location.href = londonmarker.url;
+    });
+
+    google.maps.event.addListener(gibmarker, 'click', function() {
+      window.location.href = gibmarker.url;
+    });
+
+    google.maps.event.addListener(sfmarker, 'click', function() {
+      window.location.href = sfmarker.url;
+    });
+
+</script>
