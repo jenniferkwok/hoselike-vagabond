@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 	# grab the users
 
+
+	def index
+		@top_users = User.order(points: :desc)
+	end
 	# we need to make a new user to pass to the form later
 	def new
 		@user = User.new
@@ -9,6 +13,8 @@ class UsersController < ApplicationController
 	def create
 		user_params = params.require(:user).permit(:name, :email, :password, :location)
 		@user = User.create(user_params)
+		@user.points = 0
+		@user.save
 		login(@user) # login the user
 		redirect_to "/users/#{@user.id}" # go to show
 	end

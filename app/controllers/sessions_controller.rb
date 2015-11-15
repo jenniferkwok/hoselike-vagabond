@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
 	      login(@user)
 	      redirect_to "/users/#{@user.id}"
 	    else
-	      redirect_to "/sign_in"
+	    # flash[:error] = "Your user name and password didn't match! Please try again, but better."
+	    redirect_to "/sign_in"
 	    end
 	end
 
