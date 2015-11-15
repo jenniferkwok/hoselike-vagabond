@@ -1,39 +1,56 @@
 <%= render partial: "/users/header" %>
 <h1>Welcome to vagabond by hoselike</h1>
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div style='width: 1000px;'>
+  <div id="map" style='width: 1000px; height: 500px;'></div>
 </div>
 <button class = "btn btn-material-yellow"><a href="/users/new">Sign Up</a></button>
 <button class = "btn btn-material-yellow"><a href="/sign_in">Log In</a></button>
 
 <script type="text/javascript">
-console.log("JS!");
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: new google.maps.LatLng(33,-50),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-handler = Gmaps.build('Google');
-handler.buildMap({
-    provider: {
-      disableDefaultUI: true
-      // pass in other Google Maps API options here
-    },
-    internal: {
-      id: 'map'
-    }
-  },
-  function(){
-    markers = handler.addMarkers([
-      {
-        "lat": 0,
-        "lng": 0,
-        "picture": {
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": "hello!"
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  }
-);
+    var london = new google.maps.LatLng(51.51, -0.127);
+
+    var londonmarker = new google.maps.Marker({
+        position: london,
+        url: '/cities/london',
+        title: 'This link opens the London home page',
+        map: map
+    });
+
+    var gib = new google.maps.LatLng(36.14, -5.35);
+
+    var gibmarker = new google.maps.Marker({
+        position: gib,
+        url: '/cities/gibraltar',
+        title: 'This link opens the Gibraltar home page',
+        map: map
+    });
+
+	var sf = new google.maps.LatLng(37.77, -122.42);
+
+    var sfmarker = new google.maps.Marker({
+        position: sf,
+        url: '/cities/san-francisco',
+        title: 'This link opens the San Francisco home page',
+        map: map
+    });
+
+
+    google.maps.event.addListener(londonmarker, 'click', function() {
+      window.location.href = londonmarker.url;
+    });
+
+    google.maps.event.addListener(gibmarker, 'click', function() {
+      window.location.href = gibmarker.url;
+    });
+
+    google.maps.event.addListener(sfmarker, 'click', function() {
+      window.location.href = sfmarker.url;
+    });
+
 </script>
