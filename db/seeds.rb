@@ -15,9 +15,9 @@ u3=User.create({name: "Francesca", email: "francesca@long.com", password: "franc
 u4=User.create({name: "Josh", email: "josh@shin.com", password: "shin", location: "Coruscant", points: 2})
 
 
-sf=City.create({name: "San Francisco", country: "USA", image: "http://ww2.kqed.org/pop/wp-content/uploads/sites/12/2014/05/6602702443_3b3c0d8316_b.jpg"})
-lon=City.create({name: "London", country: "UK", image: "http://cdn.londonandpartners.com/assets/events/special/46355-640x360-changing_guard_gates_640.jpg"})
-gib=City.create({name: "Gibraltar", country: "British overseas territory", image: "http://www.msccruises.co.za/za_en/Images/Gibraltar_tcm27-3906.jpg"})
+sf=City.create({name: "San Francisco", country: "USA", image: "http://ww2.kqed.org/pop/wp-content/uploads/sites/12/2014/05/6602702443_3b3c0d8316_b.jpg", background_img: "http://i.imgur.com/YTi8lo3.png"})
+lon=City.create({name: "London", country: "UK", image: "http://cdn.londonandpartners.com/assets/events/special/46355-640x360-changing_guard_gates_640.jpg", background_img: "http://i.imgur.com/LrysIDp.jpg"})
+gib=City.create({name: "Gibraltar", country: "British overseas territory", image: "http://www.msccruises.co.za/za_en/Images/Gibraltar_tcm27-3906.jpg", background_img: "http://i.imgur.com/5FMDkRY.jpg"})
 
 p1=Post.create({title: "test post 1", content: "testing!! I love this San Francisco!!!!"})
 p2=Post.create({title: "test post 2", content: "testing!! I love this London!!!!"})
