@@ -1,10 +1,8 @@
 <%= render partial: "header" %>
 <style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; }</style>
-<div>
-<img src="http://i.ytimg.com/vi/0CPMcX-yWec/default.jpg">
-</div>
-Sign Up
+    background-size: 100%; } h1{color: orangered}</style>
+
+<h1>Sign Up</h1>
 <%= form_for @user do |f| %>
 	<div>
 		<%= f.text_field :name, placeholder: "Name" %>
