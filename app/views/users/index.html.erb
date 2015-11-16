@@ -1,4 +1,60 @@
+<style>body{background-image: url(http://i.imgur.com/aBayW5C.png);
+	background-size: cover;}
+	.tableHeader, table{background-color: orange}
+.ribbon {
+ font-size: 16px !important;
+ width: 50%;
+    
+ position: relative;
+ background: #e66a2c;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em;
+ margin: 2em auto 3em;
+}
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid orange;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #7A3a1f transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+	</style>
 <%= render partial: "/users/header" %>
 <%= render partial: "/users/navbar" %>
-<h2> Leaderboard! All the current users and their scores and position!<br> Try and find yourself!</h2>
-<%= render partial: "/users/leaderboard" %>
+<h1 class="ribbon">
+   <strong class="ribbon-content">Vagabond Leaderboard</strong>
+</h1>
+<div class="row" "shadow-z-2 div-material-amber">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" >
+  <%= render partial: "/users/leaderboard" %>
+</div>
+  <div class="col-md-3"></div>
