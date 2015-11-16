@@ -19,6 +19,8 @@
 <% @posts.each do |post| %>
 <h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
 <p><%= post.content %></p>
+    <% post_city = City.find(post.city_id)%>
+  Post about <%=post_city.name%>
 <% end %>
 
    </div>
