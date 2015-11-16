@@ -16,6 +16,9 @@ class PostsController < ApplicationController
     @city.posts << @post
     current_user.posts << @post
     current_user.points +=1
+    checkBadgesSF current_user
+    checkBadgesGib current_user
+    checkBadgesLon current_user
     current_user.save
 		redirect_to "/cities/#{@city.slug}"
 	end
