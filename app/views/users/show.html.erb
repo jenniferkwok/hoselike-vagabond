@@ -2,17 +2,30 @@
 <%= render partial: "header" %>
 <%= render partial: "navbar" %>
 
-
+<style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
+    background-size: 100%; color: green;} .col-md-6{background: rgba(0,0,0,.7);} p{font-weight: bold}</style>
 <div>
  <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? You have been on this website since <%= @user.created_at %>! </h3>
 </div>
+<div id="map" style='width: 500px; height: 250px;'></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+<div class="col-md-6">
 <h1>Your Posts</h1>
 <% @posts.each do |post| %>
-<hr><h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
+<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
 <p><%= post.content %></p>
 <% end %>
+
+   </div>
+
+<div class="col-md-6">
 <div id = "trophy-case">
-<h2> Achievements!</h2>
+<h1> Achievements!</h1>
 <% if @user.sf_first == true %>
   <div class = "icon-preview"><i class="mdi-action-favorite"></i><span>You posted once in San Fransisco!</span></div>
   <% end %>
@@ -34,10 +47,7 @@
   <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
     <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
     <% end %>
-</div>
-
-<div>
-  <div id="map" style='width: 500px; height: 250px;'></div>
+	</div>
 </div>
 <script type="text/javascript">
     var map = new google.maps.Map(document.getElementById('map'), {
