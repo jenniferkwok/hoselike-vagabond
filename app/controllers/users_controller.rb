@@ -14,9 +14,12 @@ class UsersController < ApplicationController
 		user_params = params.require(:user).permit(:name, :email, :password, :location)
 		@user = User.create(user_params)
 		@user.points = 0
-		@user.sfpoints = 0
-		@user.lonpoints = 0
-		@user.gibpoints = 0
+		@user.sf_first = false
+		@user.sf_tenth = false
+		@user.lon_first = false
+		@user.lon_tenth = false
+		@user.gib_first = false
+		@user.gib_tenth = false
 		@user.save
 		login(@user) # login the user
 		redirect_to "/users/#{@user.id}" # go to show
