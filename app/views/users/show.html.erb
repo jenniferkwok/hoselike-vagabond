@@ -4,13 +4,37 @@
 
 
 <div>
-  Welcome, <%= @user.name %>. How is life in <%= @user.location %>? You have been on this website since <%= @user.created_at %>!
+ <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? You have been on this website since <%= @user.created_at %>! </h3>
 </div>
-<h1>Your Posts here!!!!!</h1>
+<h1>Your Posts</h1>
 <% @posts.each do |post| %>
-<h4>Title: <%= post.title %> <br></h4>
-<p>Content: <%= post.content %></p>
+<hr><h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
+<p><%= post.content %></p>
 <% end %>
+<div id = "trophy-case">
+<h2> Achievements!</h2>
+<% if @user.sf_first == true %>
+  <div class = "icon-preview"><i class="mdi-action-favorite"></i><span>You posted once in San Fransisco!</span></div>
+  <% end %>
+<% if @user.gib_first == true %>
+  <div class = "icon-preview"><i class="mdi-content-flag"></i><span>You posted once in Gibraltar!</span></div>
+  <% end %>
+<% if @user.lon_first == true %>
+  <div class = "icon-preview"><i class="mdi-action-redeem"></i><span>You posted once in London!</span></div>
+  <% end %>
+<% if @user.sf_tenth == true %>
+  <div class = "icon-preview"><i class="mdi-content-gesture"></i><span>You posted 10 times in San Francisco!</span></div>
+  <% end %>
+<% if @user.gib_tenth == true %>
+  <div class = "icon-preview"><i class="mdi-device-now-wallpaper"></i><span>You posted 10 times in Gibraltar!</span></div>
+<% end %>
+<% if @user.lon_tenth == true %>
+  <div class = "icon-preview"><i class="mdi-action-language"></i><span>You posted 10 times in London!</span></div>
+  <% end %>
+  <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
+    <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
+    <% end %>
+</div>
 
 <div>
   <div id="map" style='width: 500px; height: 250px;'></div>

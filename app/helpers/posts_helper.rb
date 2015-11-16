@@ -1,7 +1,7 @@
 module PostsHelper
 
 	def checkBadgesSF user
-		sf = City.where("name = 'San Francisco'")[0]
+		sf = City.where("name = 'San Francisco'")[0] #0 because where returns an array of cities and we want the first one?
 		sf_badges = Post.where("city_id = ? AND user_id = ?", sf.id, user.id)
 		if sf_badges.length >=1 
 			user.sf_first = true
