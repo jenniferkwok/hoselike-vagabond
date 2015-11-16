@@ -1,14 +1,14 @@
 <%= render partial: "/users/header" %>
 <h1>Welcome to vagabond by hoselike</h1>
-<div style='width: 1000px;'>
-  <div id="map" style='width: 1000px; height: 500px;'></div>
+<div>
+  <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <button class = "btn btn-material-yellow"><a href="/users/new">Sign Up</a></button>
 <button class = "btn btn-material-yellow"><a href="/sign_in">Log In</a></button>
 
 <script type="text/javascript">
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 3,
+      zoom: 2,
       center: new google.maps.LatLng(33,-50),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       // How you would like to style the map. 
