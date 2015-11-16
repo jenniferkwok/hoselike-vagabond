@@ -5,6 +5,9 @@
   Title <%= @post.title %>
 <br>
   Content <%= @post.content %>
+  <br>
+  <% post_author = User.find(@post.user_id)%>
+  Post by <%=post_author.name%>
 </div>
 
 <% if @user.id == @post.user_id%>
