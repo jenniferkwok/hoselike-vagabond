@@ -1,5 +1,7 @@
 <%= render partial: "/users/header" %>
 <%= render partial: "/users/navbar" %>
+<style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
+    background-size: 100%; } h1{color: orangered} h4{color:skyblue; font-weight: bold} p{color:green; font-weight: bold}</style>
 <h1>Posts here!!!!!</h1>
 <% @posts.each do |post| %>
 <h4>Title: <%= post.title %> <br></h4>
@@ -7,5 +9,7 @@
   <% post_author = User.find(post.user_id)%>
   <% post_city = City.find(post.city_id)%>
  <p> Post by <%=post_author.name%>, about <%=post_city.name%></p>
+ <br>
+ <br>
 
 <% end %>

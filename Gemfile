@@ -31,6 +31,9 @@ gem 'bootstrap-material-design'
 # pretty urls
 gem 'friendly_id'
 
+# voting gem
+gem 'acts_as_votable', '~> 0.10.0'
+
 # map
 gem 'gmaps4rails'
 gem 'underscore-rails'
@@ -53,3 +56,6 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
+ruby "2.2.1"
