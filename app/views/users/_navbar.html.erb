@@ -11,14 +11,19 @@
   </div>
   <div class="navbar-collapse collapse navbar-warning-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="javascript:void(0)">Active</a></li>
-      <li><a href="javascript:void(0)">Link</a></li>
+      <li class="active"><a href="/users">Leaderboard</a></li>
+      <li class = "dropdown">
+      <a href="bootstrap-elements.html" data-target="#" class-"dropdown-toggle" data-toggle="dropdown">Cities <b class="caret"></b></a>
+        <ul class = "dropdown-menu">
+          <li><a href="/cities/san-francisco">San Francisco</a></li>
+          <li><a href="/cities/london">London</a></li>
+          <li><a href="/cities/gibraltar">Gibraltar</a></li>
+        </ul>
+        <li class="active"><a href="/posts">All Posts</a></li>
+
     </ul>
-    <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-    </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="javascript:void(0)">Link</a></li>
+      <li><a href="/users/<%= @user.id %>">Profile</a></li>
       	<% if @logged_in %>
 			<li><%= link_to "Log out", logout_path, method: :delete %></li>
 		<% else %>

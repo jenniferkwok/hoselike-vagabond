@@ -1,6 +1,10 @@
 <%= render partial: "/users/header" %>
+<%= render partial: "/users/navbar" %>
 <h1>Posts here!!!!!</h1>
 <% @posts.each do |post| %>
 <h4>Title: <%= post.title %> <br></h4>
 <p>Content: <%= post.content %></p>
+  <% post_author = User.find(post.user_id)%>
+ <p> Post by <%=post_author.name%></p>
+
 <% end %>
