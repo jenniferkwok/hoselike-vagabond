@@ -1,10 +1,12 @@
 <%= render partial: "/users/header" %>
+<style> body{background-image: url("http://i.imgur.com/ff7KmtV.jpg");
+    background-size: 100%; }</style>
 <div>
-  Here is your post about <%= @city.name %>
+  Here is your post about <%= @city.name %>.
 <br>
-  Title <%= @post.title %>
+  Title: <%= @post.title %>
 <br>
-  Content <%= @post.content %>
+  Content: <%= @post.content %>
   <br>
   <% post_author = User.find(@post.user_id)%>
   Post by <%=post_author.name%>
