@@ -4,9 +4,9 @@
 <h1>All Posts</h1>
 <% @posts.each do |post| %>
 <!-- <div class="col-md-3"></div> -->
-<div class="card postcard shadow-z-2">
-<h4>Title: <%= post.title %></h4><hr>
-<p>Content: <%= post.content %></p>
+<div class="card shadow-z-2">
+<h4><%= post.title %></h4><hr>
+<p><%= post.content %></p>
   <% post_author = User.find(post.user_id)%>
   <% post_city = City.find(post.city_id)%>
   <hr>
