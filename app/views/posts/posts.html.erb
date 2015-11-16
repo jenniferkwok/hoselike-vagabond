@@ -1,14 +1,17 @@
 <%= render partial: "/users/navbar" %>
-<style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; } h1{color: orangered} h4{color:skyblue; font-weight: bold} p{color:green; font-weight: bold}</style>
-<h1>Posts here!!!!!</h1>
+<style> body{background-image: url("http://androidspin.com/wp-content/uploads/2014/10/bkg_09_september.jpg");
+    background-size: cover; } h1{color: orangered} h4,h5{color:brown; font-weight: bold} p{color:green; font-weight: bold}</style>
+<h1>All Posts</h1>
 <% @posts.each do |post| %>
-<h4>Title: <%= post.title %> <br></h4>
+<!-- <div class="col-md-3"></div> -->
+<div class="card postcard shadow-z-2">
+<h4>Title: <%= post.title %></h4><hr>
 <p>Content: <%= post.content %></p>
   <% post_author = User.find(post.user_id)%>
   <% post_city = City.find(post.city_id)%>
- <p> Post by <%=post_author.name%>, about <%=post_city.name%></p>
- <br>
- <br>
-
+  <hr>
+ <h5> Post by <%=post_author.name%>, about <%=post_city.name%></h5>
+</div>
+<!-- <div class="col-md-3"></div> -->
+<br>
 <% end %>
