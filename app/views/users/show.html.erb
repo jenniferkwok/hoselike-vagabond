@@ -4,7 +4,7 @@
 
 
 <div>
- <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? You have been on this website since <%= @user.created_at %>! </h3>
+ <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? <br>You have been on this website since <%= @user.created_at %>! </h3>
 </div>
 <h1>Your Posts</h1>
 <% @posts.each do |post| %>
