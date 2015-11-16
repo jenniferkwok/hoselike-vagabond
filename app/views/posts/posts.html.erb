@@ -5,6 +5,7 @@
 <h4>Title: <%= post.title %> <br></h4>
 <p>Content: <%= post.content %></p>
   <% post_author = User.find(post.user_id)%>
- <p> Post by <%=post_author.name%></p>
+  <% post_city = City.find(post.city_id)%>
+ <p> Post by <%=post_author.name%>, about <%=post_city.name%></p>
 
 <% end %>
