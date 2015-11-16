@@ -1,14 +1,23 @@
 <%= render partial: "/users/header" %>
-<style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; } h1{color: orangered}</style>
-<h1>Sign In</h1>
+<style> body{background-image: url("http://www.img.lirent.net/2014/10/Android-Lollipop-wallpapers.jpg");
+    background-size: cover; }
+    h1{color:purple}</style>
+    <br><br><br><br><br><br><br>
+
+<div class="row">
+<div class="col-md-4"></div>
+<div class= "card amber col-md-4"><h1>Log in to Vagabond</h1><hr>
 <!-- form is getting submitted to POST /sessions -->
 <%= form_for @user, url: "/sessions", method: "post" do |f| %> 
   <br><div>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
   </div><br>
   <div>
-    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password, placeholder: "Password",class: "form-control" %>
   </div><br>
-  <%= f.submit "Sign In", :class => "btn btn-material-indigo"  %>
+  <%= f.submit "Log In", :class => "button red btn btn-material-indigo"  %>
 <% end %>
+<br>
+</div>
+<div class="col-md-4"></div>
+</div>
