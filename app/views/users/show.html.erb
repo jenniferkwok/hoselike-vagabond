@@ -2,9 +2,9 @@
 <%= render partial: "navbar" %>
 
 <style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; color: green;} .col-md-6{background: rgba(0,0,0,.7);} p{font-weight: bold}</style>
+    background-size: 100%; color: green;} .col-md-6{background: rgba(0,0,0,.7);} p{font-weight: bold} h3{font-weight: bold}</style>
 <div>
- <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? <br>You have been on this website since <%= @user.created_at %>! </h3>
+ <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? <br>You have been on this website since <%= @user.created_at.localtime %>! </h3>
 </div>
 <div id="map" style='width: 500px; height: 250px;'></div>
 </div>
