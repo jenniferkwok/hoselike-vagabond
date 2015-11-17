@@ -1,11 +1,12 @@
 <style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; } h1{color:orangered;} img{height: 150px; width: 400px; margin:auto;}</style>
+    background-size: 100%; } h1{color:orangered;} img{height: 150px; width: 400px; margin:auto; }.modal-content{background-color: rgba(0,0,0,0.8); color: red;}</style>
 <div><img src="https://cloud.githubusercontent.com/assets/13576777/11195581/73ac80a2-8c67-11e5-8f5d-91d785dcef6b.png"></div>
 <div>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <button class = "btn btn-material-yellow"><a href="/users/new">Sign Up</a></button>
-<button class = "btn btn-material-yellow"><a href="/sign_in">Log In</a></button>
+<button class = "btn btn-material-yellow"><a href="/sign_in"> Log In </a></button>
+<button class="btn btn-raised btn-material-blue" data-toggle="modal" data-target="#complete-dialog">Top 5</button>
 
 <script type="text/javascript">
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -60,3 +61,29 @@
  
 
 </script>
+
+
+<div id="complete-dialog" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+<h1 class="ribbon">
+   <strong class="ribbon-content">Top 5 Users</strong>
+</h1>
+<div class="row" "shadow-z-2 div-material-amber">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" >
+  <%= render partial: "/users/leaderboard" %>
+</div>
+  <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
