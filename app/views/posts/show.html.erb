@@ -1,3 +1,4 @@
+<%= render partial: "/users/navbar" %>
 <style> body{background-image: url("http://i.imgur.com/ff7KmtV.jpg");
     background-size: 100%; }</style>
 <div>
@@ -14,7 +15,21 @@
 <% if @user.id == @post.user_id%>
 <a href="/posts/<%=@post.id%>/edit"><button type="button" class="btn btn-default">Edit</button></a>
 <button class="btn btn-raised btn-material-deep-orange" data-toggle="modal" data-target="#complete-dialog">Delete</button>
-<% end %>
+<% elsif @upvoted %>
+  You liked this post!!!!!!!!
+<% elsif @downvoted %>
+  You hated this post!!!!!!!!
+<% else %>
+  <%= button_to [:upvote, @post], {:class => "btn btn-primary btn-fab btn-raised btn-sm mdi-image-filter-vintage"}  do %>
+    like 
+  <% end %>
+  <%= button_to [:downvote, @post], {:class => "btn btn-warning btn-fab btn-raised btn-sm mdi-image-flash-on"} do %>
+     dislike 
+  <% end %><% end %>
+
+<!--   <button class="vote-button btn btn-primary btn-fab btn-raised btn-sm mdi-image-filter-vintage">  </button>
+    <button class="vote-button btn btn-warning btn-fab btn-raised btn-sm mdi-image-flash-on">  </button> -->
+
 <div id="complete-dialog" class="modal fade" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
