@@ -1,19 +1,27 @@
 <style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; } h1{color: orangered}</style>
-
-<h1>Sign Up</h1>
+    background-size: cover; }
+    h1{color:purple}</style>
+    <br><br><br><br><br>
+<!-- <div class="row">
+ --><div class="col-md-4"></div>
+<div class= "panel col-md-4">
+<h1>Sign up</h1><hr>
 <%= form_for @user do |f| %>
 	<div>
-		<%= f.text_field :name, placeholder: "Name" %>
-	</div>
+		<%= f.text_field :name, placeholder: "Name", class: "form-control floating-label"  %>
+	</div><br>
 	<div>
-		<%= f.text_field :email, placeholder: "Email" %>
-	</div>
+		<%= f.text_field :email, placeholder: "Email", class: "form-control floating-label"  %>
+	</div><br>
 	<div>
-		<%= f.password_field :password, placeholder: "Password" %>
-	</div>
+		<%= f.password_field :password, placeholder: "Password", class: "form-control floating-label"  %>
+	</div><br>
 	<div>
-		<%= f.text_field :location, placeholder: "Location" %>
-	</div>
-	<%= f.submit "Sign Up!!!!" %>
+		<%= f.text_field :location, placeholder: "Location",class: "form-control floating-label"  %>
+	</div><br>
+	<%= f.submit "Sign Up!!!!", :class => "button red btn btn-material-indigo"%>
 <% end %>
+<br>
+</div>
+<div class="col-md-4"></div>
+</div>
