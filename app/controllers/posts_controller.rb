@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 	def index
 		@posts = Post.all
     @user = current_user
+    @logged_in = logged_in?
 		render :posts #render index?
 	end
 
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
 
 	def show
     @user = current_user
+    @logged_in = logged_in?
 	  @post = Post.find(params[:id])
 		@city = City.find(@post.city_id)
     @upvoted = @user.voted_up_on? @post

@@ -50,7 +50,7 @@
 <img src =" <%= @city.image %> ">
 <h1>Your Posts here!!!!!</h1> -->
 <% @posts.reverse.each do |post| %>
-<div class="card postcard shadow-z-1">
-<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> <hr>
+<div class="card postcard shadow-z-2">
+<h2><a href = "/posts/<%= post.id %>"><%= post.title %></a></h2> <hr>
 <p><%= post.content %></p></div>
 <% end %>
