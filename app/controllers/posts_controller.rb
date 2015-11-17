@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+		@posts = Post.all.order(updated_at: :asc)
     @user = current_user
     @logged_in = logged_in?
-		render :posts #render index?
+		render :posts  #render index?
 	end
 
 	def new
