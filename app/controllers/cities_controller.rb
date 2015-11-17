@@ -15,7 +15,7 @@ class CitiesController < ApplicationController
 				@logged_in=false
 		end
 		p params[:id]
-		@posts = Post.where(:city_id => @city.id)
+		@posts = Post.where(:city_id => @city.id).order(updated_at: :asc)
 			@post = Post.new
 		render :show	
   	end
