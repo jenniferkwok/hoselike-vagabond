@@ -2,7 +2,7 @@
 <style> body{background-image: url("http://androidspin.com/wp-content/uploads/2014/10/bkg_09_september.jpg");
     background-size: cover; } h1{color: orangered} h4,h5{color:brown; font-weight: bold} p{color:green; font-weight: bold} .card{background: rgba(250,250,250,.8)}</style>
 <h1>All Posts</h1>
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
 <!-- <div class="col-md-3"></div> -->
 <div class="card shadow-z-2">
 <h4><%= post.title %></h4><hr>
