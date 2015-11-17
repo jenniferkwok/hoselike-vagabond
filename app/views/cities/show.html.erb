@@ -11,11 +11,13 @@
               <span class="card-content"><h1><%= @city.name %></h1></span>
               <img src="<%= @city.image %>">
             </div>
+            <% if @logged_in %>
             <div class="card-action">
             <br>
             <button class="btn btn-raised btn-material-amber" data-toggle="modal" data-target="#complete-dialog">Create New Post</button>
             </div>
             <br>
+            <%else%><%end%>
           </div>
         </div>
       </div>
@@ -51,6 +53,6 @@
 <h1>Your Posts here!!!!!</h1> -->
 <% @posts.reverse.each do |post| %>
 <div class="card postcard shadow-z-1">
-<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> <hr>
+<h4><% if @logged_in %><a href = "/posts/<%= post.id %>"><%= post.title %></a><%else%><%= post.title %><%end%></h4> <hr>
 <p><%= post.content %></p></div>
 <% end %>

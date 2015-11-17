@@ -46,7 +46,17 @@
         map: map
     });
 
+    google.maps.event.addListener(londonmarker, 'click', function() {
+      window.location.href = londonmarker.url;
+    });
 
+    google.maps.event.addListener(gibmarker, 'click', function() {
+      window.location.href = gibmarker.url;
+    });
+
+    google.maps.event.addListener(sfmarker, 'click', function() {
+      window.location.href = sfmarker.url;
+    });
  
 
 </script>
