@@ -2,7 +2,9 @@
 <%= render partial: "navbar" %>
 
 <style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
-    background-size: 100%; color: green;} .col-md-6{background: rgba(0,0,0,.7);} p{font-weight: bold}</style>
+    background-size: 100%; color: green;} .row{background: rgba(0,0,0,.7);} p{font-weight: bold}
+.yourpost{padding: 30px}
+    </style>
 <div>
  <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? <br>You have been on this website since <%= @user.created_at %>! </h3>
 </div>
@@ -16,11 +18,12 @@
 <div class="col-md-6">
 <h1>Your Posts</h1>
 <% @posts.each do |post| %>
+<div class="yourpost">
 <h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
 <p><%= post.content %></p>
     <% post_city = City.find(post.city_id)%>
   Post about <%=post_city.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%>.
-  <br><br><br>
+</div>
 <% end %>
 
    </div>
@@ -28,24 +31,63 @@
 <div class="col-md-6">
 <div id = "trophy-case">
 <h1> Achievements!</h1>
+<div class="row">
+<div class="col-sm-3">
+<!-- first city post -->
 <% if @user.sf_first == true %>
-  <div class = "icon-preview"><i class="mdi-action-favorite"></i><span>You posted once in San Fransisco!</span></div>
-  <% end %>
+
+  <div class = "icon-preview">
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205276/40f4fb54-8cbb-11e5-8768-b929a9394838.png" height="200"><br><i class="mdi-action-favorite"></i><span>You posted once in San Fransisco!</span></div>
+    <% else %>
+  <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post in San Francisco to unlock!
+</div>  
+<% end %>
 <% if @user.gib_first == true %>
-  <div class = "icon-preview"><i class="mdi-content-flag"></i><span>You posted once in Gibraltar!</span></div>
+  <div class = "icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205274/40e81286-8cbb-11e5-9141-4562d77d185a.png" height="200"><br><i class="mdi-content-flag"></i><span>You posted once in Gibraltar!</span></div>
+    <% else %>
+  <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post in Gibraltar to unlock!
+</div>
   <% end %>
 <% if @user.lon_first == true %>
-  <div class = "icon-preview"><i class="mdi-action-redeem"></i><span>You posted once in London!</span></div>
-  <% end %>
+  <div class = "icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205274/40e81286-8cbb-11e5-9141-4562d77d185a.png" height="200"><br><i class="mdi-action-redeem"></i><span>You posted once in London!</span></div>
+    <% else %>
+  <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205278/41249396-8cbb-11e5-8e84-e3b61eb5938f.png" height="200"><br>
+Post in London to unlock!
+</div>  <% end %>
+  </div>
+  <div class="col-sm-3">
+  <!-- 10th post -->
 <% if @user.sf_tenth == true %>
-  <div class = "icon-preview"><i class="mdi-content-gesture"></i><span>You posted 10 times in San Francisco!</span></div>
+  <div class = "icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205273/40e50640-8cbb-11e5-9aab-a9c65cc717c2.png" height="200"><br><i class="mdi-content-gesture"></i><span>You posted 10 times in San Francisco!</span></div>
+    <% else %>
+    <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post 10 times in San Francisco to unlock!
+</div>
   <% end %>
+
 <% if @user.gib_tenth == true %>
-  <div class = "icon-preview"><i class="mdi-device-now-wallpaper"></i><span>You posted 10 times in Gibraltar!</span></div>
+  <div class = "icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205277/4123cd9e-8cbb-11e5-8ed8-15c01569afa7.png" height="200"><br><i class="mdi-device-now-wallpaper"></i><span>You posted 10 times in Gibraltar!</span></div>
+  <% else %>  
+  <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post 10 times in Gibraltar to unlock!
+</div>
 <% end %>
 <% if @user.lon_tenth == true %>
-  <div class = "icon-preview"><i class="mdi-action-language"></i><span>You posted 10 times in London!</span></div>
-  <% end %>
+  <div class = "icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205275/40efe1a0-8cbb-11e5-826e-0cbeb2a72817.png" height="200"><br><i class="mdi-action-language"></i><span>You posted 10 times in London!</span></div>
+<% else %>  <div>
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post 10 times in London to unlock!
+</div>
+<% end %>
+</div>
+
   <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
     <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
     <% end %>

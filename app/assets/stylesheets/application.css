@@ -19,6 +19,7 @@
  
 body, .well {
 	text-align: center;
+	   background-attachment: fixed;
 }
 .citycard {
 	width: 60%;
