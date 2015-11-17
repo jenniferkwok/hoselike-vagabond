@@ -9,13 +9,13 @@ class CitiesController < ApplicationController
 	def show
 		@user= current_user
    	 	@city = City.friendly.find(params[:id])
-	   	 if logged_in?
+	   	if logged_in?
 				@logged_in=true
-			else
+		else
 				@logged_in=false
 		end
 		p params[:id]
-		@posts = Post.where(:city_id => @city.id).order(updated_at: :asc)
+		@posts = Post.where(:city_id => @city.id)
 			@post = Post.new
 		render :show	
   	end
