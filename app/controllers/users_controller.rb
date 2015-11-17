@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	def index
 		@top_users = User.order(points: :desc)
 		@user = current_user
+		    @logged_in = logged_in?
 	end
 	# we need to make a new user to pass to the form later
 	def new

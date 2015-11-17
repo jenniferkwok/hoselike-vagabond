@@ -34,6 +34,10 @@ Rails.application.routes.draw do
 
   get "/posts/:id/edit", to: "posts#edit"
 
+  post "/posts/:id/upvote", to: "posts#upvote", as: "upvote_post"
+
+  post "/posts/:id/downvote", to: "posts#downvote", as: "downvote_post"
+
   get "/cities", to: "cities#index", as: "cities"
 
   get "/cities/:id", to: "cities#show"

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	acts_as_voter
+
 	validates :name, presence: true, uniqueness: true
 	validates :email, uniqueness: true, presence: true
 	has_secure_password
