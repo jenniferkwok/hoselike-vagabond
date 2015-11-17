@@ -1,14 +1,14 @@
 <%= render partial: "/users/navbar" %>
 
 <style> body{background-image: url("<%= @city.background_img %>");
-    background-size: 100%; } .card{background: rgba(0,0,0,.7); color: green; font-weight: bold} .card-content{color: deeppink;}</style>
+    background-size: 100%; } .card{background: rgba(0,0,0,.7); color: green; font-weight: bold}</style>
 
 <div class="container">
       <div class="row">
         <div class="col s12">
-          <div class="card citycard">
+          <div class="card citycard"><h1><%= @city.name %></h1>
             <div class="card-image">
-              <span class="card-content"><h1><%= @city.name %></h1></span>
+              <span class="card-content"></span>
               <img src="<%= @city.image %>">
             </div>
             <% if @logged_in %>
