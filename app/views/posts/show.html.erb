@@ -8,7 +8,7 @@
 <div class= "panel col-md-6 shadow-z-2">
 <h1><%= @post.title %></h1>
   <% post_author = User.find(@post.user_id)%>
-  Written by <%=post_author.name%><hr>
+  Written by <%=post_author.name%>, with a score of <%= @post.get_likes.size - @post.get_dislikes.size%>.<hr>
 <br>
 <%= @post.content %>
   <hr>

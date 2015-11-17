@@ -56,5 +56,8 @@
 <div class="card postcard shadow-z-1">
 <h4><% if @logged_in %><a href = "/posts/<%= post.id %>"><%= post.title %></a><%else%><%= post.title %><%end%></h4> <hr>
 
-<p><%= post.content %></p></div>
+<p><%= post.content %></p>
+<% post_author = User.find(post.user_id)%>
+<h5> Post by <%=post_author.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%></h5>
+</div>
 <% end %>
