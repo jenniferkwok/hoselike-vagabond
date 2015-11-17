@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-	acts_as_voter
-
 	validates :name, presence: true, uniqueness: true
 	validates :email, uniqueness: true, presence: true
 	has_secure_password
@@ -10,4 +8,6 @@ class User < ActiveRecord::Base
 		@user = User.find_by({email: params[:email]})
 		@user.try(:authenticate, params[:password])
 	end
+	acts_as_voter
+
 end
