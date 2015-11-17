@@ -10,7 +10,7 @@
   <% post_author = User.find(post.user_id)%>
   <% post_city = City.find(post.city_id)%>
   <hr>
- <h5> Post by <%=post_author.name%>, about <%=post_city.name%></h5>
+ <h5> Post by <%=post_author.name%>, about <%=post_city.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%>.</h5>
 </div>
 <br>
 <% end %>

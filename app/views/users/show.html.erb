@@ -19,7 +19,7 @@
 <h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
 <p><%= post.content %></p>
     <% post_city = City.find(post.city_id)%>
-  Post about <%=post_city.name%>
+  Post about <%=post_city.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%>.
   <br><br><br>
 <% end %>
 
