@@ -1,6 +1,6 @@
 <%= render partial: "/users/navbar" %>
 <style> body{background-image: url("http://i.imgur.com/ff7KmtV.jpg");
-    background-size: cover;} h1{color:salmon;}</style>
+    background-size: cover;} h1, h5{color:salmon;}</style>
 <br><br>
  <div class="col-md-3"></div>
 
@@ -22,8 +22,7 @@
 <% elsif @downvoted %>
   You hated this post!!!!!!!!
 <% else %>
-  <%= button_to [:upvote, @post], {:class => "btn btn-primary btn-fab btn-raised btn-sm mdi-image-filter-vintage", :value => "like"}  do %>
-    like 
+  <%= button_to [:upvote, @post], {:class => "btn btn-primary btn-fab btn-raised btn-sm mdi-image-filter-vintage"}  do %><br><h5>like</h5> 
   <% end %>
   <%= button_to [:downvote, @post], {:class => "btn btn-warning btn-fab btn-raised btn-sm mdi-image-flash-on"} do %>
      dislike 
