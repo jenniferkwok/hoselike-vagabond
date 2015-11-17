@@ -18,15 +18,15 @@
 <button class="btn btn-raised btn-material-deep-orange" data-toggle="modal" data-target="#complete-dialog">Delete</button>
 
 <% elsif @upvoted %>
-  You liked this post!!!!!!!!
+  You liked this post!!!!!!!!<br><br><br>
 <% elsif @downvoted %>
-  You hated this post!!!!!!!!
+  You hated this post!!!!!!!!<br><br><br>
 <% else %>
-  <%= button_to [:upvote, @post], {:class => "btn btn-primary btn-fab btn-raised btn-sm mdi-image-filter-vintage"}  do %><br><h5>like</h5> 
-  <% end %>
-  <%= button_to [:downvote, @post], {:class => "btn btn-warning btn-fab btn-raised btn-sm mdi-image-flash-on"} do %>
-     dislike 
-  <% end %>
+  <%= button_to [:upvote, @post], {:class => "btn btn-primary btn-fab btn-raised btn-sm mdi-action-thumb-up"}  do %>
+  <% end %><br>
+  <%= button_to [:downvote, @post], {:class => "btn btn-warning btn-fab btn-raised btn-sm mdi-action-thumb-down"} do %>
+      
+  <% end %><br><br>
 
 <% end %>
 
