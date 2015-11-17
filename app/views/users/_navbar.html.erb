@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button><% if @logged_in %>
-        <a href="/users/<%= @user.id %>"><% else %><%end%><img src="https://cloud.githubusercontent.com/assets/13576777/11195580/73a8d1b4-8c67-11e5-9f9a-743b0ef33783.png" height="55"></a></div>
+        <a href="/users/<%= @user.id %>"><% else %><a href="/"><%end%><img src="https://cloud.githubusercontent.com/assets/13576777/11195580/73a8d1b4-8c67-11e5-9f9a-743b0ef33783.png" height="55"></a></div>
   <div class="navbar-collapse collapse navbar-warning-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="/users">Leaderboard</a></li>
@@ -23,7 +23,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <% if @logged_in %>
-      <li><a href="/users/<%= @user.id %>">Profile</a></li>
+      <li><a href="/users/<%= @user.id %>/edit">Edit Profile</a></li>
 			<li><%= link_to "Log out", logout_path, method: :delete %></li>
 		<% else %>
 			<li><a href="/sign_in">Log in</a></li>

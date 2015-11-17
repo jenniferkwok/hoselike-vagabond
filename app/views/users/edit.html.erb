@@ -1,17 +1,27 @@
-<h1>Edit</h1>
-
+<style> body{background-image: url("https://i.imgur.com/qctHRSp.jpg");
+    background-size: cover; }
+    h1{color:purple}</style>
+    <br><br><br><br><br>
+<!-- <div class="row">
+ --><div class="col-md-4"></div>
+<div class= "panel col-md-4">
+<h1>Edit Profile</h1><hr>
 <%= form_for @user do |f| %>
-	<br><div>
-		<%= f.text_field :name, placeholder: "Name" %>
+	<div>
+		<%= f.text_field :name, placeholder: "Name", class: "form-control floating-label"  %>
 	</div><br>
 	<div>
-		<%= f.text_field :email, placeholder: "Email" %>
+		<%= f.text_field :email, placeholder: "Email", class: "form-control floating-label"  %>
 	</div><br>
 	<div>
-		<%= f.password_field :password, placeholder: "Password" %>
+		<%= f.password_field :password, placeholder: "Password", class: "form-control floating-label"  %>
 	</div><br>
 	<div>
-		<%= f.text_field :location, placeholder: "Location" %>
+		<%= f.text_field :location, placeholder: "Location",class: "form-control floating-label"  %>
 	</div><br>
-	<%= f.submit "Edit!!!!", :class => "btn btn-material-indigo" %>
+	<%= f.submit "Edit", :class => "button red btn btn-material-indigo"%>
 <% end %>
+<br>
+</div>
+<div class="col-md-4"></div>
+</div>
