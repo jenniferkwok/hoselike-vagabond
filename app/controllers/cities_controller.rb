@@ -2,6 +2,7 @@ class CitiesController < ApplicationController
 	def index
 		@user= current_user
 		@cities = City.all
+		    @logged_in = logged_in?
 		render "/users/index"
 	end
 
