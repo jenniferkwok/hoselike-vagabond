@@ -10,10 +10,9 @@
 <div>
  <h3> Welcome, <%= @user.name %>. How is life in <%= @user.location %>? <br>You have been on this website since <%= @user.created_at.localtime %>! </h3>
 </div>
+<br>
 <div id="map" style='width: 500px; height: 250px;'></div>
 </div>
-<br>
-<br>
 <br>
 <br>
 <div class="row">
@@ -33,6 +32,10 @@
 <!-- <div class="col-md-6"> -->
 <div id = "trophy-case">
 <h1> Achievements!</h1>
+  <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
+    <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
+    <% end %>
+	</div>
 <!-- <div class="row"> -->
 <div class="col-sm-3">
 <!-- first city post -->
@@ -90,10 +93,6 @@ Post 10 times in London to unlock!
 <% end %>
 </div>
 
-  <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
-    <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
-    <% end %>
-	</div>
 <!-- </div> -->
 <script type="text/javascript">
     var map = new google.maps.Map(document.getElementById('map'), {
